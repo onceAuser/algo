@@ -1,0 +1,23 @@
+def swap(array,f1,s1):
+    #print(s1,f1) #the hash'#' keyword is used to commenting the line
+    temp=array[f1] #here we are swapping a variable onto other
+    array[f1]=array[s1]
+    array[s1]=temp
+    #print(array[f1],array[s1])
+def indexofmini(array,st1):#here we are finding minval and if it is found then replace their index with minIndex'minIndex'
+    minval=array[st1]
+    minInd=st1
+    for x in range(st1+1,len(array)):
+        if array[x]<minval:
+            minval=array[x]
+            minInd=x
+    return minInd
+def selectsort(array):#here we performing the procedure of selection sort 
+    r=0
+    for x in range(len(array)):
+        r=indexofmini(array,x)
+        swap(array,x,r)
+    return array
+array=[int(x) for x in input().split()]
+print(selectsort(array))
+    
